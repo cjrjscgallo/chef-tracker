@@ -1,8 +1,7 @@
 <h1>Chef Tracker</h1>
 
-<p>Is your favorite {{name}} cooking right now?</p>
-<p>Find out with <b>Chef Tracker</b>, the hottest new {{name}}-tracking app on the market.</p>
-<p>We know some {{name}}s are better than others, so we want to tell you who's cooking at our restaurant right now.
-  Is it your favorite {{name}}? Then maybe you should visit!</p>
-<hr>
-{{input value=name}}
+<ul>
+  {{#each chefs as |chef|}}
+    <li>Delicious food, cooked by {{chef.name}}. Cooking today: {{chef.isCooking}}</li>
+  {{/each}}
+</ul>
