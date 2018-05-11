@@ -1,0 +1,7 @@
+li.not-cooking {
+  color: grey;
+}
+
+li.cooking {
+  text-decoration: underline;
+}

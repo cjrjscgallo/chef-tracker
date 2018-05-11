@@ -1,7 +1,18 @@
 <h1>Chef Tracker</h1>
 
+<p id="explanation">Cooking today: {{chefCount}} of our {{cookingCount.length}} chefs.</p>
+
 <ul>
-  {{#each chefs as |chef|}}
-    <li>Delicious food, cooked by {{chef.name}}. Cooking today: {{chef.isCooking}}</li>
+  {{#each model as |chef|}}
+    {{#if chef.isCooking}}
+      <li class="cooking">{{chef.name}}<button {{action 'exit' chef}}>Exit</button></li>
+    {{else}}
+      <li class="not-cooking">{{chef.name}}
+        <button {{action 'enter' chef}}>Enter</button>
+        <button {{action 'fire' chef}}>Fire!</button>
+      </li>
+    {{/if}}
   {{/each}}
 </ul>
+<hr>
+{{input value=newChef}}<button {{action 'saveNewChef'}}>Save</button>
