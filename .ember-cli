@@ -8,5 +8,5 @@
 
   "disableAnalytics": false,
   "port": 3000,
-  "live-reload-port": 4000
+  "live-reload-port": 3100
 }
