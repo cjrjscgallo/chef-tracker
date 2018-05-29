@@ -3,5 +3,9 @@ li.not-cooking {
 }
 
 li.cooking {
+
+}
+
+.chefName {
   text-decoration: underline;
 }

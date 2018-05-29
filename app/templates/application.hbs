@@ -2,16 +2,21 @@
 
 <p id="explanation">Cooking today: {{cookingCount.length}} of our {{chefCount}} chefs.</p>
 
+<p>Our {{chefCount}} chefs teach {{totalNumberOfStudents}} students.</p>
+
 <ul>
   {{#each model as |chef|}}
     {{#if chef.isCooking}}
-      <li class="cooking">{{chef.name}}<button {{action 'exit' chef}}>Exit</button></li>
+      <li class="cooking">
+        <span class="chefName">{{chef.name}}</span>: <button {{action 'exit' chef}}>Exit</button><br>
+      </li>
     {{else}}
       <li class="not-cooking">{{chef.name}}
         <button {{action 'enter' chef}}>Enter</button>
         <button {{action 'fire' chef}}>Fire!</button>
       </li>
     {{/if}}
+    Number of students: <button {{action 'removeStudent' chef}}>-</button> {{chef.numberOfStudents}} <button {{action 'addStudent' chef}}>+</button>
   {{/each}}
 </ul>
 <hr>
