@@ -2,10 +2,6 @@ li.not-cooking {
   color: grey;
 }
 
-li.cooking {
-
-}
-
-.chefName {
-  text-decoration: underline;
+li.not-cooking a {
+  color: grey;
 }

@@ -1,5 +1,24 @@
 @import url("chef-list.css");
 
+body {
+  font-family: "Trebuchet MS";
+}
+
 #explanation {
   text-decoration: underline;
 }
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item {
+  padding: 0px 20px 0px 0px;
+}
+
+.medium-textarea {
+  height: 100px;
+  width: 300px;
+}
+

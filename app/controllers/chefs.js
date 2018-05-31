@@ -25,9 +25,6 @@ export default Controller.extend({
       }).save()
       this.set('newChef', '')
     },
-    fire(chef) {
-      chef.destroyRecord();
-    },
     addStudent(chef) {
       chef.incrementProperty("numberOfStudents");
       chef.save();

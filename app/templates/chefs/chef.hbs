@@ -1,0 +1,9 @@
+<h1>{{model.name}}</h1>
+<p>{{model.description}}</p>
+{{#if model.hasDegree}}
+  <p>Has a degree from {{model.degreeFrom}}.</p>
+{{/if}}
+{{link-to 'Edit' 'chefs.chef.edit' model}}
+<p>
+  <button {{action 'fire' model}}>Fire!</button>
+</p>
