@@ -6,5 +6,6 @@ export default DS.Model.extend({
   numberOfStudents: DS.attr('number', {defaultValue: 0}),
   description: DS.attr('string'),
   hasDegree: DS.attr('boolean', {defaultValue: false}),
-  degreeFrom: DS.attr('string')
+  degreeFrom: DS.attr('string'),
+  imageName: DS.attr('string')
 });
