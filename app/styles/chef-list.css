@@ -1,7 +1,51 @@
-li.not-cooking {
+.not-cooking {
   color: grey;
 }
 
-li.not-cooking a {
+.not-cooking a {
   color: grey;
+}
+
+.title-bar {
+  font-size: 1.2em;
+}
+
+.chef-description {
+  padding: 5px;
+}
+
+.img-icon {
+  max-width: 80px;
+  max-height: 80px;
+  padding: 5px;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-left {
+  float: left;
+}
+
+.chef-card {
+  border: 1px solid black;
+  border-radius: 5px;
+  max-width: 250px;
+  padding: 4px;
+  margin: 5px;
+}
+
+.chef-profile {
+  display: flex;
+  flex-direction: row;
+}
+
+.chef-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.chef-button {
+  margin: 0px 5px 5px 0px;
 }

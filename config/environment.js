@@ -13,6 +13,7 @@ module.exports = function(environment) {
       messagingSenderId: "1091767799130"
     },
     rootURL: '/',
+    rootImageURL: 'assets/images/',
     locationType: 'auto',
     EmberENV: {
       FEATURES: {

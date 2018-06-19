@@ -11,29 +11,12 @@ export default Controller.extend({
   studentCount: mapBy('model', 'numberOfStudents'),
   totalNumberOfStudents: sum('studentCount'),
   actions: {
-    enter(chef) {
-      chef.set("isCooking", true);
-      chef.save();
-    },
-    exit(chef) {
-      chef.set("isCooking", false);
-      chef.save();
-    },
     saveNewChef() {
       this.store.createRecord('chef', {
-        name: this.get('newChef')
+        name: this.get('newChef'),
+        imageName: ''
       }).save()
       this.set('newChef', '')
-    },
-    addStudent(chef) {
-      chef.incrementProperty("numberOfStudents");
-      chef.save();
-    },
-    removeStudent(chef) {
-      if (chef.get("numberOfStudents") > 0) {
-        chef.decrementProperty("numberOfStudents");
-        chef.save();
-      }
     }
   }
 });

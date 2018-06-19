@@ -1,6 +1,7 @@
 <h3>Editing Chef</h3>
 <p>Name: {{input value=model.name}}</p>
 <p>Description: {{textarea value=model.description class='medium-textarea'}}</p>
+<p>Image: {{input value=model.imageName}}</p>
 <p>Has a culinary degree: {{input type="checkbox" name="hasDegree" checked=model.hasDegree}}</p>
 {{#if model.hasDegree}}
   <p>Institution: {{input value=model.degreeFrom}}</p>

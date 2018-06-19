@@ -1,0 +1,15 @@
+<div class="chef-card {{if chef.isCooking '' 'not-cooking'}}">
+  <div class="title-bar" {{action 'toggleOpen'}}>{{chef.name}}<span class="pull-right">{{if isOpen 'V' '>'}}</span></div>
+  {{#if isOpen}}
+    <div class="chef-profile">
+    <div><img src="{{rootURL}}{{rootImageURL}}{{chef.imageName}}" class="img-icon pull-left"></div>
+    <div class="chef-description">{{chef.description}}{{#if chef.hasDegree}} {{chef.name}} has a degree from {{chef.degreeFrom}}.{{/if}}</div>
+    </div>
+    <div class="chef-buttons">
+      <div class="chef-button">{{#link-to 'chefs.chef' chef.id }}<button>Show</button>{{/link-to}}</div>
+      <div class="chef-button">{{#link-to 'chefs.chef.edit' chef.id}}<button>Edit</button>{{/link-to}}</div>
+      <div class="chef-button"><button {{action 'toggleChef' chef}}>{{if chef.isCooking 'Exit' 'Enter'}}</button></div>
+    </div>
+    <div>Number of students: <button {{action 'removeStudent' chef}}>-</button> {{chef.numberOfStudents}} <button {{action 'addStudent' chef}}>+</button></div>
+  {{/if}}
+</div>
