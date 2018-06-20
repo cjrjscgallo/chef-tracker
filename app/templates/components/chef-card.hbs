@@ -2,7 +2,7 @@
   <div class="title-bar" {{action 'toggleOpen'}}>{{chef.name}}<span class="pull-right">{{if isOpen 'V' '>'}}</span></div>
   {{#if isOpen}}
     <div class="chef-profile">
-    <div><img src="{{rootURL}}{{rootImageURL}}{{chef.imageName}}" class="img-icon pull-left"></div>
+    <div>{{icon-image chef.imageName left=true}}</div>
     <div class="chef-description">{{chef.description}}{{#if chef.hasDegree}} {{chef.name}} has a degree from {{chef.degreeFrom}}.{{/if}}</div>
     </div>
     <div class="chef-buttons">
