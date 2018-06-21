@@ -4,7 +4,23 @@
     <p id="explanation">Cooking today: {{cookingCount.length}} of our {{chefCount}} chefs.</p>
     <p>Our {{chefCount}} chefs teach {{totalNumberOfStudents}} students.</p>
     {{#each model as |chef|}}
-      {{chef-card chef=chef}}
+      {{#collapsible-component as |isOpen component|}}
+        <div class="chef-card {{if chef.isCooking '' 'not-cooking'}}">
+          <div class="title-bar" {{action 'toggleOpen' target=component}}>{{chef.name}}<span class="pull-right">{{if isOpen 'V' '>'}}</span></div>
+          {{#if isOpen}}
+            <div class="chef-profile">
+              <div>{{icon-image chef.imageName left=true}}</div>
+              <div class="chef-description">{{chef.description}}{{#if chef.hasDegree}} {{chef.name}} has a degree from {{chef.degreeFrom}}.{{/if}}</div>
+            </div>
+            <div class="chef-buttons">
+              <div class="chef-button">{{#link-to 'chefs.chef' chef.id }}<button>Show</button>{{/link-to}}</div>
+              <div class="chef-button">{{#link-to 'chefs.chef.edit' chef.id}}<button>Edit</button>{{/link-to}}</div>
+              <div class="chef-button"><button {{action 'toggleChef' chef}}>{{if chef.isCooking 'Exit' 'Enter'}}</button></div>
+            </div>
+            <div>Number of students: <button {{action 'removeStudent' chef}}>-</button> {{chef.numberOfStudents}} <button {{action 'addStudent' chef}}>+</button></div>
+          {{/if}}
+        </div>
+      {{/collapsible-component}}
     {{/each}}
     <hr>
     {{input value=newChef}}<button {{action 'saveNewChef'}}>Save</button>

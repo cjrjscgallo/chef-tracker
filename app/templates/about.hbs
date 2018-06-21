@@ -1,3 +1,11 @@
 This is all about us.
 
+{{#collapsible-component as |isOpen component|}}
+  <p><button {{action 'toggleOpen' target=component}}>{{if isOpen 'Show less...' 'Show more...'}}</button></p>
+  {{#if isOpen}}
+    <p>This is a sentence that does not provide more information about us, is very vague in nature, and not very helpful.</p>
+  {{/if}}
+  <hr>
+{{/collapsible-component}}
+
 {{email-tag emailAbout="our web site" emailRecipient="steve"}}

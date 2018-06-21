@@ -17,6 +17,19 @@ export default Controller.extend({
         imageName: ''
       }).save()
       this.set('newChef', '')
+    },
+    toggleChef(chef) {
+      chef.set("isCooking", !chef.get("isCooking"))
+    },
+    addStudent(chef) {
+      chef.incrementProperty("numberOfStudents");
+      chef.save();
+    },
+    removeStudent(chef) {
+      if (chef.get("numberOfStudents") > 0) {
+        chef.decrementProperty("numberOfStudents");
+        chef.save();
+      }
     }
   }
 });
