@@ -1,15 +1,15 @@
 <h3>Editing Chef</h3>
-<p>Name: {{input value=model.name}}</p>
-<p>Description: {{textarea value=model.description class='medium-textarea'}}</p>
-<p>Image: {{input value=model.imageName}}</p>
-<p>Has a culinary degree: {{input type="checkbox" name="hasDegree" checked=model.hasDegree}}</p>
-{{#if model.hasDegree}}
-  <p>Institution: {{input value=model.degreeFrom}}</p>
+<p>Name: {{input value=model.chef.name}}</p>
+<p>Description: {{textarea value=model.chef.description class='medium-textarea'}}</p>
+<p>Image: {{input value=model.chef.imageName}}</p>
+<p>Has a culinary degree: {{input type="checkbox" name="hasDegree" checked=model.chef.hasDegree}}</p>
+{{#if model.chef.hasDegree}}
+  <p>Institution: {{input value=model.chef.degreeFrom}}</p>
 {{/if}}
 <p>
   Currently working at:
-  {{#x-select value=model.restaurant action="selectRestaurant" on-change=(action (mut model.restaurant)) as |xs|}}
-    {{#each}}
+  {{#x-select value=model.chef.restaurant action="selectRestaurant" on-change=(action (mut model.chef.restaurant)) as |xs|}}
+    {{#each model.restaurants as |restaurant|}}
       {{#xs.option value=restaurant}}{{restaurant.name}}{{/xs.option}}
     {{/each}}
   {{/x-select}}
