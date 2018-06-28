@@ -6,4 +6,13 @@
 {{#if model.hasDegree}}
   <p>Institution: {{input value=model.degreeFrom}}</p>
 {{/if}}
+<p>
+  Currently working at:
+  {{#x-select value=model.restaurant action="selectRestaurant" on-change=(action (mut model.restaurant)) as |xs|}}
+    {{#each}}
+      {{#xs.option value=restaurant}}{{restaurant.name}}{{/xs.option}}
+    {{/each}}
+  {{/x-select}}
+</p>
+
 <button {{action 'save'}}>Save</button>

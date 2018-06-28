@@ -1,0 +1,8 @@
+<h1>{{model.name}}</h1>
+<p>Featuring these chefs:</p>
+<ul>
+  {{#each model.chefs as |chef|}}
+    <li>{{chef.name}}</li>
+  {{/each}}
+</ul>
+{{#link-to 'restaurants.restaurant.edit' model.id}}<button>Edit</button>{{/link-to}}
